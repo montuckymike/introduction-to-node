@@ -6,6 +6,33 @@ A __node_module__ is basically a lego block of code.   Everything in a node appl
 
 __NPM__ stands for Node Package Manager - It's just a tool that allows us to easily access the Node module ecosystem and ad them to our project.
 
+Example node_module: [Moment.js](https://momentjs.com/)
+
 Every node app has a __package.json__, which is the master file that keeps track of all node modules your project cares about.
 
 To add a `package.json` to your project, run the command `npm init`, and accept all defaults.
+
+-----
+### Commit your code
+`git add -A`
+
+`git commit -m "push message"`
+
+`git push origin master`
+
+------
+
+### Node HTTP Server
+
+We used the node module HTTP to build a simple web server, that we can then run and connect to using the web address: `http://localhost:3000/`. To run the server use the command `node index.js`
+
+```js
+var http = require("http");
+
+http.createServer(function (request, response){
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.end("Hello World!");
+}).listen(3000,function(){
+  console.log("App is listening on port 3000")
+});
+```
