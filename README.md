@@ -37,19 +37,23 @@ http.createServer(function (request, response){
 });
 ```
 
-### Express Web Server
-[Express API](http://expressjs.com/)
-To add express node module to our applicaiton:
-`npm install --save express`
-To ensure it was dded successfully, check your `package json` for:
+###Express Web Server
+
+Express API
+
+To add express node module to our application:
+
+npm install --save express
+
+To ensure it was added successfully, check your `package.json` for:
 ```js
-"dependencies":{
-  "express": ""
+"dependencies": {
+  "express": "^4.15.3"
 }
 ```
-This also give us a ton of code we do not care to track in out Github, in the `node_modules/`folder.  to ignore this code:
-`touch .gitignore`
-add
+This also gives us a ton of code we do not care to track in our Github, in the node_modules/ folder. To ignore this code:
+
+`touch .gitignore` add `node_modules/` to `.gitignore`
 
 __express server__
 ```js
@@ -67,5 +71,21 @@ app.get("/wazzup", function(req, res){
 
 app.listen(3000, function(){
   console.log("Listening on port 3000");
+});
+```
+## Request Parameter -
+This is a way to pass data from the URL to the page/ `index.js`
+Here is a block of the code for example:
+
+```js
+
+app.get("/greeting/:name", function(req, res){
+  var yourName = req.params.name;
+  res.send("Nice to meet you "+ yourName)
+});
+
+app.get("/greeting/color/:color", function(req, res){
+  var favColor = req.params.color;
+  res.send("This is your fav color "+ favColor)
 });
 ```
