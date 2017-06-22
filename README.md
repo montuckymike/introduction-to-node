@@ -36,3 +36,36 @@ http.createServer(function (request, response){
   console.log("App is listening on port 3000")
 });
 ```
+
+### Express Web Server
+[Express API](http://expressjs.com/)
+To add express node module to our applicaiton:
+`npm install --save express`
+To ensure it was dded successfully, check your `package json` for:
+```js
+"dependencies":{
+  "express": ""
+}
+```
+This also give us a ton of code we do not care to track in out Github, in the `node_modules/`folder.  to ignore this code:
+`touch .gitignore`
+add
+
+__express server__
+```js
+var express = require("express");
+var app = express();
+
+app.get("/greeting", function(req, res){
+  res.send("Wahoo you found the greeting end point!")
+});
+
+app.get("/wazzup", function(req, res){
+  res.send("You kind of get this, but not really!")
+});
+
+
+app.listen(3000, function(){
+  console.log("Listening on port 3000");
+});
+```

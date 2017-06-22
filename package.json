@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/montuckymike/introduction-to-node/issues"
   },
-  "homepage": "https://github.com/montuckymike/introduction-to-node#readme"
+  "homepage": "https://github.com/montuckymike/introduction-to-node#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
 }

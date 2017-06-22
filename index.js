@@ -1,9 +1,16 @@
 // index.js
-var http = require("http");
+var express = require("express");
+var app = express();
 
-http.createServer(function (request, response){
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.end("Hello World!");
-}).listen(3000,function(){
-  console.log("App is listening on port 3000")
+app.get("/greeting", function(req, res){
+  res.send("Wahoo you found the greeting end point!")
+});
+
+app.get("/wazzup", function(req, res){
+  res.send("You kind of get this, but not really!")
+});
+
+
+app.listen(3000, function(){
+  console.log("Listening on port 3000");
 });
