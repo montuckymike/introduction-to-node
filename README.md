@@ -89,3 +89,8 @@ app.get("/greeting/color/:color", function(req, res){
   res.send("This is your fav color "+ favColor)
 });
 ```
+
+## NodeMon
+
+This makes it so I do not have to `node index.js` every time to restart the server.  It auto updates everytime.  I just need to make sure I start the process which each new "session"
+`nodemon index.js`
