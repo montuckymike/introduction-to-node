@@ -94,3 +94,21 @@ app.get("/greeting/color/:color", function(req, res){
 
 This makes it so I do not have to `node index.js` every time to restart the server.  It auto updates everytime.  I just need to make sure I start the process which each new "session"
 `nodemon index.js`
+
+note - - the terminal will continue to run on its own, but if you need to type in the terminal you will need to Control C it and terminate the server.  This was confusing at first - I get it now 
+
+
+## Adding new endpoints to pass data from form:
+here is the JS
+```js
+app.post("/mtb", function(req, res){
+  var brand = req.body.brand;
+  var model = req.body.model;
+  var build = req.body.build;
+
+  var mtb = {brand: brand, model: model, build: build};
+  res.json(mtb);
+  console.log("I wants a ", brand, " ",model," with a ",build," build.");
+});
+```
+Using the `req.body.KEY` where the KEY is defined right now by the user- we are using Postman to look at this right now.  So if I put "brand" as the KEY and "Santa Cruz" as the VALUE the `res` / `var brand` would be "Santa Cruz" in the above example.  
