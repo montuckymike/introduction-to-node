@@ -18,6 +18,7 @@
   "homepage": "https://github.com/montuckymike/introduction-to-node#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "moment": "^2.18.1"
   }
 }
