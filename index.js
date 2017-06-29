@@ -1,6 +1,9 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var makeDate = require("./dateMaker");
 var app = express();
+
+console.log(makeDate(10));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
